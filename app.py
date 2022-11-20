@@ -1,3 +1,5 @@
+from functions import add_break, rem_break, get_todos, write_todos
+
 print("Hello, here's a way to orgainse your tasks more efficiently! Begin by typing either of the following commands...")
 print("===================================================")
 print("Please bear in mind the syntax for entering your request.")
@@ -7,25 +9,6 @@ print("'edit <task id>' edits the task with the id <task id>.")
 print("'complete <task id>' removes the task with the id <task id>.")
 print("'exit' quits the program.")
 print("===================================================")
-
-
-def add_break(text):
-    result = text + '\n'
-    return result
-
-def rem_break(text):
-    result = text.strip('\n')
-    return result
-
-def get_todos():
-    with open("user_data.txt", "r") as file:
-        todos = file.readlines()
-    return todos
-
-def write_todos(context):
-    with open("user_data.txt", "w") as file:
-        file.writelines(context)
-
 
 todos = get_todos()
 if todos:
